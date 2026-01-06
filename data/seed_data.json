@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "version": "2.0",
+    "description": "Advanced LifeOS database with health protocols and precision timing."
+  },
+  "routine_execution_timeline": {
+    "NORMAL_DAY": [
+      { "time": "07:00", "activity": "Wake Up & Hydrate", "details": "Drink 500ml water immediately." },
+      { "time": "07:30", "activity": "Breakfast Protocol", "meal_ref": "breakfast_standard" },
+      { "time": "09:00", "activity": "Deep Work Block 1 (Math/Stats)", "protocol": "Pomodoro 50/10" },
+      { "time": "16:00", "activity": "Pre-Workout Ritual", "details": "Dynamic stretching. Caffeine check." },
+      { "time": "16:15", "activity": "Gym Session", "ref_schedule": "workout_schedule" },
+      { "time": "23:00", "activity": "Sleep", "target": "8 hours" }
+    ]
+  },
+  "health_protocols": {
+    "scenarios": {
+      "poor_sleep": {
+        "trigger": "User reports < 6 hours sleep or 'groggy'",
+        "protocol": {
+          "action": "Reduce cognitive load.",
+          "caffeine_strategy": "Delay first coffee by 90 mins. Cut off by 14:00.",
+          "nap_strategy": "20 min power nap between 13:00-14:00."
+        },
+        "source": "Matthew Walker, 'Why We Sleep'"
+      },
+      "digestive_distress": {
+        "trigger": "User reports 'spicy food upset' or 'stomach ache'",
+        "protocol": {
+          "diet_adjustment": "Switch to BRAT diet (Bananas, Rice, Applesauce, Toast).",
+          "avoid": ["Dairy", "Caffeine", "Spicy sauces"]
+        },
+        "source": "Cleveland Clinic"
+      },
+      "shoulder_pain": {
+        "trigger": "User reports 'clicking' or 'shoulder pain'",
+        "protocol": {
+          "immediate_check": "Stop overhead exercises.",
+          "warmup_addition": ["Dead Hangs (30s)", "Band Pull-aparts"],
+          "modification": { "Dumbbell Press": "Switch to Neutral Grip" }
+        },
+        "source": "Man Flow Yoga"
+      }
+    }
+  },
+  "workout_schedule": {
+    "weekly_plan": {
+      "monday": { "focus": "Cardio (Basketball)", "duration": "90 mins" },
+      "tuesday": { "focus": "Back & Biceps", "main_lifts": [{"name": "Lat Pulldown", "sets": "4"}, {"name": "Seated Row", "sets": "4"}] },
+      "wednesday": { "focus": "Shoulders", "notes": "Watch for clicking." },
+      "thursday": { "focus": "Legs", "main_lifts": [{"name": "Squats", "sets": "4"}] },
+      "sunday": { "focus": "Chest & Triceps", "main_lifts": [{"name": "Bench Press", "sets": "3"}] }
+    }
+  }
+}
